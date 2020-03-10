@@ -16,7 +16,7 @@ public class Function1 extends LazyWiringDeclarableSupport implements Function {
 		SpringContextBootstrappingInitializer.setBeanClassLoader(SpringConfig.class.getClassLoader());
 		new SpringContextBootstrappingInitializer().init(new Properties());
 
-		functionContext.getResultSender().lastResult(true);
+		functionContext.getResultSender().lastResult("ApplicationContext Created.");
 	}
 
 	public String getId() {

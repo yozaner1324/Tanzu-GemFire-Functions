@@ -1,0 +1,7 @@
+create region --name=/Numbers --type=PARTITION
+put --key-class=java.lang.Long --key=0 --value-class=java.lang.Long --value=10 --region=/Numbers
+put --key-class=java.lang.Long --key=1 --value-class=java.lang.Long --value=10 --region=/Numbers
+put --key-class=java.lang.Long --key=2 --value-class=java.lang.Long --value=4 --region=/Numbers
+put --key-class=java.lang.Long --key=3 --value-class=java.lang.Long --value=7 --region=/Numbers
+put --key-class=java.lang.Long --key=4 --value-class=java.lang.Long --value=11 --region=/Numbers
+put --key-class=java.lang.Long --key=5 --value-class=java.lang.Long --value=8 --region=/Numbers

@@ -22,12 +22,16 @@ public class Function2 extends LazyWiringDeclarableSupport implements Function {
 	@Override
 	public void execute(FunctionContext functionContext) {
 
-		Long sum = 0L;
-		for(Object i: functionContext.getCache().getRegion("/Numbers").values()) {
-			sum += (Long) i;
-		}
+		if(functionContext.getCache().getRegion("/Numbers") != null) {
+			Long sum = 0L;
+			for (Object i : functionContext.getCache().getRegion("/Numbers").values()) {
+				sum += (Long) i;
+			}
 
-		functionContext.getResultSender().lastResult(greeting + ", " + addressee + "! The sum of all values in /Numbers is " + sum);
+			functionContext.getResultSender().lastResult(greeting + ", " + addressee + "! The sum of all values in /Numbers is " + sum);
+		} else {
+			throw new IllegalStateException("Region /Numbers has not been created. You can create it manually or by running setup.gfsh.");
+		}
 	}
 
 	@Override

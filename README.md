@@ -8,10 +8,10 @@ reflect how this process may change in future releases of Tanzu GemFire or Sprin
 This example project consists of three modules: function1, function2, and holder.
 
 * function1 is a Tanzu GemFire function that uses `SpringContextBootstrappingInitializer` to create and persist an
-`ApplicationContext` and returns true. 
+`ApplicationContext`. 
 * function2 is another Tanzu GemFire function that sums the values in the /Numbers region and returns it with a greeting message
 formed using two beans (“Greeting” and “Addressee”) defined in the `ApplicationContext` that function1 created.
-* holder is only relevant if using one of the non-recommended methods. It will create and store an `ApplicatioContext`.
+* holder is only relevant if NOT using `SpringContextBootstrappingInitializer`. It will create and store an `ApplicatioContext`.
 holder has code for using Spring with and without Spring Boot; currently, the Spring Boot code is commented out. The
 Spring Boot dependency is also commented out in the pom.xml.
 
