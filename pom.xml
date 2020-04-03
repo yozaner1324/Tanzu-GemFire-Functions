@@ -11,6 +11,7 @@
     <modules>
         <module>function1</module>
         <module>function2</module>
+        <module>client</module>
     </modules>
 
     <dependencies>
