@@ -7,7 +7,7 @@ import org.springframework.data.gemfire.support.SpringContextBootstrappingInitia
 
 import java.util.Properties;
 
-public class Function1 extends LazyWiringDeclarableSupport implements Function {
+public class Function1 extends LazyWiringDeclarableSupport implements Function<String> {
 
 	@Override
 	public void execute(FunctionContext functionContext) {

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 
 @Component
-public class Function2 extends LazyWiringDeclarableSupport implements Function {
+public class Function2 extends LazyWiringDeclarableSupport implements Function<String> {
 
 	@Autowired
 	@Qualifier("Greeting")
