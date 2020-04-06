@@ -17,45 +17,8 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-gemfire</artifactId>
-            <version>2.0.0.RELEASE</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.pivotal.gemfire</groupId>
-                    <artifactId>geode-core</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-context</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-tx</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-web</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-context-support</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.springframework.data</groupId>
-                    <artifactId>spring-data-commons</artifactId>
-                </exclusion>
-            </exclusions>
+            <version>2.2.6.RELEASE</version>
         </dependency>
-        <dependency>
-            <groupId>io.pivotal.gemfire</groupId>
-            <artifactId>geode-core</artifactId>
-            <version>9.9.0</version>
-        </dependency>
-        <!--Uncomment below if using Spring Boot -->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter</artifactId>-->
-<!--            <version>1.5.20.RELEASE</version>-->
-<!--        </dependency>-->
     </dependencies>
 
     <repositories>
