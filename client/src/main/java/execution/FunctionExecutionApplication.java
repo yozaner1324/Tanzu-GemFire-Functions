@@ -18,7 +18,6 @@ import org.apache.geode.cache.GemFireCache;
 import org.apache.geode.cache.Region;
 import org.apache.geode.cache.client.ClientRegionShortcut;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,9 +25,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.gemfire.client.ClientRegionFactoryBean;
-import org.springframework.data.gemfire.config.annotation.EnableCachingDefinedRegions;
 import org.springframework.data.gemfire.config.annotation.EnableClusterConfiguration;
-import org.springframework.data.gemfire.config.annotation.EnableClusterDefinedRegions;
 
 @SpringBootApplication
 // Causes the creation of server-side Cloud Cache/GemFire regions via the @Cacheable annotation during the
@@ -36,22 +33,6 @@ import org.springframework.data.gemfire.config.annotation.EnableClusterDefinedRe
 public class FunctionExecutionApplication {
 
 	@Configuration
-	@Profile("!localCluster")
-	// Allows Spring to configure the Cloud Cache/GemFire cluster; necessary for creating regions
-	@EnableClusterConfiguration(useHttp = true)
-	static class CloudConfiguration {
-		@Bean("Numbers")
-		protected ClientRegionFactoryBean<Long, Long> configureProxyClientCustomerRegion(GemFireCache gemFireCache) {
-			ClientRegionFactoryBean<Long, Long> clientRegionFactoryBean = new ClientRegionFactoryBean<>();
-			clientRegionFactoryBean.setCache(gemFireCache);
-			clientRegionFactoryBean.setName("Numbers");
-			clientRegionFactoryBean.setShortcut(ClientRegionShortcut.PROXY);
-			return clientRegionFactoryBean;
-		}
-	}
-
-	@Configuration
-	@Profile("localCluster")
 	@EnableClusterConfiguration(useHttp = true, requireHttps = false)
 	static class LocalConfiguration {
 		@Bean("Numbers")
