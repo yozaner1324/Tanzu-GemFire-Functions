@@ -23,9 +23,7 @@ import java.util.List;
 @Component
 @OnRegion(region = "Numbers")
 public interface FunctionExecutions {
-    @FunctionId("fun1")
-	String createContext();
 
-    @FunctionId("fun2")
+    @FunctionId("springfun")
 	List<String> getServerReport();
 }

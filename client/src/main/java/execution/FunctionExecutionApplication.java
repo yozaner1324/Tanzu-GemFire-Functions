@@ -32,7 +32,7 @@ import org.springframework.data.gemfire.config.annotation.EnableClusterConfigura
 public class FunctionExecutionApplication {
 
 	@Configuration
-	@EnableClusterConfiguration(useHttp = true)
+	@EnableClusterConfiguration(useHttp = true, requireHttps = false)
 	static class LocalConfiguration {
 		@Bean("Numbers")
 		protected ClientRegionFactoryBean<Long, Long> configureProxyClientCustomerRegion(GemFireCache gemFireCache) {

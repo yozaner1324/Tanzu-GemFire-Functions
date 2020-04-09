@@ -27,11 +27,6 @@ public class FunctionController {
     @RequestMapping(value="/report", produces = "text/html")
     public String getReport() {
 
-        // in case the ApplicationContext has already been initialized
-        try {
-            functionExecutions.createContext();
-        } catch(Exception e){ }
-
         String report = functionExecutions.getServerReport().get(0);
 
         return "<html><body>"
