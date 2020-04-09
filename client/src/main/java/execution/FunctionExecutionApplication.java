@@ -24,7 +24,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.gemfire.client.ClientRegionFactoryBean;
-import org.springframework.data.gemfire.config.annotation.EnableClusterConfiguration;
+import org.springframework.geode.config.annotation.EnableClusterAware;
 
 @SpringBootApplication
 // Causes the creation of server-side Cloud Cache/GemFire regions via the @Cacheable annotation during the
@@ -32,7 +32,7 @@ import org.springframework.data.gemfire.config.annotation.EnableClusterConfigura
 public class FunctionExecutionApplication {
 
 	@Configuration
-	@EnableClusterConfiguration(useHttp = true, requireHttps = false)
+	@EnableClusterAware
 	static class LocalConfiguration {
 		@Bean("Numbers")
 		protected ClientRegionFactoryBean<Long, Long> configureProxyClientCustomerRegion(GemFireCache gemFireCache) {
