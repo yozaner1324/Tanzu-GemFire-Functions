@@ -12,7 +12,7 @@
         <dependency>
             <groupId>org.springframework.geode</groupId>
             <artifactId>spring-gemfire-starter</artifactId>
-            <version>1.1.4.RELEASE</version>
+            <version>1.2.6.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
